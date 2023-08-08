@@ -8,7 +8,7 @@ import os, time
 print("Welcome To NewsVideoMaking Bot")
 print("gathering news data...")
 newsData = news.getNews()
-numberOfVideos = int(input("Enter the number of videos you want to create (1-15): "))
+numberOfVideos = int(input("Enter the number of videos you want to create (1-10): "))
 
 for i in range(numberOfVideos):
     print(f"\nWorking on video {i+1}...")
