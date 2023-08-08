@@ -12,10 +12,9 @@ numberOfVideos = int(input("Enter the number of videos you want to create (1-15)
 
 for i in range(numberOfVideos):
     print(f"\nWorking on video {i+1}...")
-    text = newsData[i]["decription"]
-    imageUrl = newsData[i]["images"]
+    text = newsData[i]["content"]
+    imageUrl = newsData[i]["imageUrl"]
     image = requests.get(imageUrl)  
-    publishedAt = newsData[i]["time"]  
     if (image.status_code == 200):
         with open("image.jpg", "wb") as f:
             f.write(image.content)
