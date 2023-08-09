@@ -22,7 +22,6 @@ for i in range(numberOfVideos):
     myobj = gTTS(text=text, lang="en", slow=False, tld='co.in')
     myobj.save("news.mp3")
     videomaker.videoMaker("image.jpg", text, "news.mp3", f"output/output{i+1}.mp4")
-    time.sleep(1)
     os.remove("image.jpg")
     os.remove("news.mp3")
     print(f"Completed video {i+1}.\n")
