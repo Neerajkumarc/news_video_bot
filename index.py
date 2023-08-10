@@ -7,7 +7,10 @@ import os, time
 
 print("Welcome To NewsVideoMaking Bot")
 print("gathering news data...")
+n_timeStart = time.time()
 newsData = news.getNews()
+n_timeEnd = time.time()
+print(f"news data gathered. (finished in {(n_timeEnd-n_timeStart):.2f}s)")
 numberOfVideos = int(input("Enter the number of videos you want to create (1-10): "))
 
 for i in range(numberOfVideos):
