@@ -13,6 +13,7 @@ n_timeEnd = time.time()
 print(f"news data gathered. (finished in {(n_timeEnd-n_timeStart):.2f}s)")
 numberOfVideos = int(input("Enter the number of videos you want to create (1-10): "))
 
+v_timeStart = time.time()
 for i in range(numberOfVideos):
     print(f"\nWorking on video {i+1}...")
     text = newsData[i]["content"]
@@ -28,8 +29,9 @@ for i in range(numberOfVideos):
     os.remove("image.jpg")
     os.remove("news.mp3")
     print(f"Completed video {i+1}.\n")
-
-
+v_timeEnd = time.time()
+v_timeTotal =v_timeEnd-v_timeStart
+print(f"{numberOfVideos} videos created successfully (finished in {(v_timeTotal):.2f}s)")
 
 
 
