@@ -11,7 +11,13 @@ n_timeStart = time.time()
 newsData = news.getNews()
 n_timeEnd = time.time()
 print(f"news data gathered. (finished in {(n_timeEnd-n_timeStart):.2f}s)")
-numberOfVideos = int(input("Enter the number of videos you want to create (1-10): "))
+while True:
+    numberOfVideos = int(input("Enter the number of videos you want to create (1-10): "))
+    if numberOfVideos >= 1 and numberOfVideos <= 10:
+        break
+    else:
+        print("Invalid input. Please enter a value between 1 and 10.")
+
 
 v_timeStart = time.time()
 for i in range(numberOfVideos):
