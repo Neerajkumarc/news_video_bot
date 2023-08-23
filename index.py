@@ -4,8 +4,7 @@ import videomaker
 from gtts import gTTS
 import os, time
 
-
-print("Welcome To NewsVideoMaking Bot")
+print("\n",45*"-","\n \tWelcome To NewsVideoMaking Bot","\n",45*"-")
 print("gathering news data...")
 n_timeStart = time.time()
 newsData = news.getNews()
