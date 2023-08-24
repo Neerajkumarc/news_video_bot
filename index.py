@@ -1,6 +1,7 @@
 import news
 import requests
 import videomaker
+import dateConversion
 from gtts import gTTS
 import os, time
 
@@ -24,13 +25,15 @@ for i in range(numberOfVideos):
     text = newsData[i]["content"]
     imageUrl = newsData[i]["imageUrl"]
     image = requests.get(imageUrl)  
+    newsSource = newsData[i]["sourceName"]
+    newsDate = dateConversion.getDate(newsData[i]["createdAt"])
     if (image.status_code == 200):
         with open("image.jpg", "wb") as f:
             f.write(image.content)
 
     myobj = gTTS(text=text, lang="en", slow=False, tld='co.in')
     myobj.save("news.mp3")
-    videomaker.videoMaker("image.jpg", text, "news.mp3", f"output/output{i+1}.mp4")
+    videomaker.videoMaker("image.jpg", text, newsSource, newsDate, "news.mp3", f"output/output{i+1}.mp4")
     os.remove("image.jpg")
     os.remove("news.mp3")
     print(f"Completed video {i+1}.\n")
