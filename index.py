@@ -6,6 +6,8 @@ from gtts import gTTS
 import os, time
 
 print("\n",45*"-","\n \tWelcome To NewsVideoMaking Bot","\n",45*"-")
+if not os.path.exists("output"):
+    os.makedirs("output")
 print("gathering news data...")
 n_timeStart = time.time()
 newsData = news.getNews()
